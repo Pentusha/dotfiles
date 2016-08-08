@@ -1,5 +1,5 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="blinks"
+ZSH_THEME="pure"
 plugins=(
     bower celery colorize debian django git github mercurial pip 
     python postgres themes supervisor npm docker
@@ -18,6 +18,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 export VIRTUAL_ENV_DISABLE_PROMPT=0
 source $ZSH/oh-my-zsh.sh
 
+alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
 alias vi='vim'
 alias please='sudo $(fc -ln -1)'
 
@@ -35,6 +36,7 @@ alias please='sudo $(fc -ln -1)'
     alias traceroute='grc /usr/sbin/traceroute'
     alias ls='grc ls'
 }
+
 alias -g J="| python -m json.tool"
 alias -g H="| head"
 alias -g T="| tail"
@@ -49,3 +51,4 @@ alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
 
+alias killdjango='kill -9 `lsof -t -c python -i:8000 -a`'
