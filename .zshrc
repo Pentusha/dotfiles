@@ -2,7 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="pure"
 plugins=(
     bower celery colorize debian django git github mercurial pip 
-    python postgres themes supervisor npm docker
+    python postgres themes supervisor npm docker vi-mode
 )
 
 # User configuration
@@ -10,7 +10,7 @@ export HISTFILE=/tmp/zsh_history
 export EDITOR="vim"
 export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 export SOLARIZED_THEME='dark'
-export TERM=xterm-256color
+export TERM=xterm-color
 
 export WORKON_HOME="~/.venvs"
 source /usr/local/bin/virtualenvwrapper.sh
