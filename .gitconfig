@@ -1,10 +1,16 @@
 [user]
     name = Ivan Larin
-    email = pentusha@gmail.com
+    email = ivan.larin@saprun.com
+    signingkey = 0177F6C8
+
+[commit]
+    gpgsign = true
 
 [alias]
     # View abbreviated SHA, description, and history graph of the latest 20 commits
     l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+    aa = add --all
 
     # View the current working tree status using the short format
     s = status -s
@@ -21,6 +27,7 @@
 
     # pull changes wo merge
     pr = pull --rebase
+    prp = "!git pull --rebase && git push"
 
     # Clone a repository including all submodules
     c = clone --recursive
@@ -102,4 +109,4 @@
     log = true
 
 [push]
-   default = matching
+    default = matching

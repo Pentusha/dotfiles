@@ -1,8 +1,8 @@
 export ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="pure"
+# ZSH_THEME="pure"
 plugins=(
     bower celery colorize debian django git github mercurial pip 
-    python postgres themes supervisor npm docker vi-mode
+    python postgres themes supervisor vagrant make vi-mode npm yarn tmux
 )
 
 # User configuration
@@ -21,6 +21,7 @@ source $ZSH/oh-my-zsh.sh
 alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
 alias vi='vim'
 alias please='sudo $(fc -ln -1)'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$ history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s-alert$//'\'')"'
 
 [[ -f /usr/bin/grc ]] && {
     alias configure='grc ./configure'
@@ -50,5 +51,3 @@ alias -g LL="2>&1 | less"
 alias -g CA="2>&1 | cat -A"
 alias -g NE="2> /dev/null"
 alias -g NUL="> /dev/null 2>&1"
-
-alias killdjango='kill -9 `lsof -t -c python -i:8000 -a`'

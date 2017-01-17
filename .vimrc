@@ -89,10 +89,10 @@ syntax on
 set relativenumber
 set number
 au BufReadPost * set relativenumber
-set tw=79          " width of document (used by gd)
+set tw=99          " width of document (used by gd)
 set nowrap         " don't automatically wrap on load
 set fo-=t          " don't automatically wrap text when typing
-set colorcolumn=80
+set colorcolumn=100
 highlight ColorColumn ctermbg=233
 
 " easier formatting of paragraphs
@@ -141,6 +141,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'jmcantrell/vim-virtualenv'
 
 Plugin 'kchmck/vim-coffee-script'
+
+Plugin 'ElmCast/elm-vim'
 
 Plugin 'jewes/Conque-Shell'
 let g:ConqueTerm_PyVersion = 3
@@ -223,6 +225,11 @@ map <buffer> <F10> :SyntasticCheck<CR>
 " Python folding
 Plugin 'tarmack/vim-python-ftplugin'
 set nofoldenable
+
+" https://blag.felixhummel.de/vim/django_completion.html
+if filereadable($VIRTUAL_ENV . '/.vimrc')
+  source $VIRTUAL_ENV/.vimrc
+endif
 
 call vundle#end()
 
